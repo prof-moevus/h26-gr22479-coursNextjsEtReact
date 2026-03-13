@@ -1,5 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,13 +18,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased` + " p-4 min-h-screen items-center justify-center bg-slate-600! font-sans dark:bg-black"}
+      <div
+        className="min-h-screen items-center justify-center font-sans dark:bg-black font-extrabold"
       >
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
         {children}
-      </body>
-    </html>
+      </div>
   );
 }
