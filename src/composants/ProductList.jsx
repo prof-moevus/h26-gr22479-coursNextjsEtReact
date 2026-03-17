@@ -11,6 +11,43 @@ const products = [
 
 
 
+function ProductTable() {
+  const rows = []; // Nos lignes à afficher
+  let lastCategory = null;
+
+  products.forEach(product => {
+    if (product.category !== lastCategory) {
+      rows.push(
+        <tr key={product.category}>
+          <th colSpan="2">{product.category}</th>
+        </tr>
+      );
+      lastCategory = product.category;
+    }
+    rows.push(
+      <tr key={product.name}>
+        <td>{product.stocked ? product.name : <span style={{ color: 'red' }}>{product.name}</span>}</td>
+        <td>{product.price}</td>
+      </tr>
+    );
+  });
+  
+  console.log("DB1331 : ", rows);
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>{rows}</tbody>
+    </table>
+  );
+};
+
+
+
 export default function ProductList() {
     return (
         <section className="p-2 w-1/2 border-2 border-orange-500">
