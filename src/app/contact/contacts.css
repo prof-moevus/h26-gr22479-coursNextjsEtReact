@@ -1,0 +1,48 @@
+ddiv {
+    padding: 20px;
+}
+
+h1 {
+    width: 350px;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-transform: uppercase;
+
+}
+
+form {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
