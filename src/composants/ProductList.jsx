@@ -133,17 +133,20 @@ function ProductList() {
                     <Product info={prod} key={prod._id} />
                 )
             })}
+            <Product info={products[0]} isOrganic={true}/>
+
         </section>
     )
 }
 
-function Product({info}) {
+function Product({info, isOrganic=false}) {
     return (
         <div className={` p-2 m-2 rounded-lg ${info.stocked ? "bg-green-200" : "bg-gray-300 text-gray-900"}`}>
             <h3 className="text-lg text-center font-bold text-pink-500">{info.name}</h3>
             <p>Category: {info.category}</p>
             <p className={info.price === "$1" ? "font-bold" : ""} >Price: {info.price === "$1" ? "One dollah" : info.price}</p>
             <p>Stocked: {info.stocked ? "En stock" : "En rupture"}</p>
+            {isOrganic && <p className="text-green-700 font-bold">Organic</p>}
         </div>
     )
 }
